@@ -28,48 +28,117 @@ margin/right = 0.0
 margin/bottom = 0.0
 alignment = 1
 
-[node name="Label" type="Label" parent="box"]
+[node name="session" type="VBoxContainer" parent="box"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 3.0
+margin/right = 178.0
+margin/bottom = 86.0
+alignment = 0
+
+[node name="Label" type="Label" parent="box/session"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 50.0
+margin/top = 0.0
 margin/right = 178.0
-margin/bottom = 64.0
-text = "Current Cost of Life:"
+margin/bottom = 14.0
+text = "Session Length:"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Time" type="Label" parent="box"]
+[node name="Time" type="Label" parent="box/session"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 68.0
+margin/top = 18.0
 margin/right = 178.0
-margin/bottom = 133.0
-text = "0 days\n0 hours\n0 minutes\n14 seconds"
+margin/bottom = 83.0
+text = "0 days\n3 hours\n21 minutes\n57 seconds"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Reset" type="Button" parent="box"]
+[node name="HSeparator" type="HSeparator" parent="box"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 137.0
+margin/top = 90.0
 margin/right = 178.0
-margin/bottom = 157.0
+margin/bottom = 93.0
+
+[node name="total" type="VBoxContainer" parent="box"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 97.0
+margin/right = 178.0
+margin/bottom = 204.0
+alignment = 0
+
+[node name="Label" type="Label" parent="box/total"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 178.0
+margin/bottom = 14.0
+text = "Current Cost of Life:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Time" type="Label" parent="box/total"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 18.0
+margin/right = 178.0
+margin/bottom = 83.0
+text = "0 days\n0 hours\n1 minutes\n8 seconds"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Reset" type="Button" parent="box/total"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 87.0
+margin/right = 178.0
+margin/bottom = 107.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

@@ -6,7 +6,7 @@ const PATH = 'res://addons/work-time/'
 var dock
 
 func _enter_tree():
-	dock = preload('res://addons/work-time/WorkTime.tscn').instance()
+	dock = load(PATH+'WorkTime.tscn').instance()
 	
 	add_control_to_dock(DOCK_SLOT_LEFT_BR, dock)
 

@@ -1,6 +1,5 @@
 # godot-time-tracker
-A plug-in dock to track time spent working on a Godot project
+A lightweight, unintrusive time-tracker for your Godot project.
 
-
-Installation:  
--Copy the 'addons' folder into your project folder
+- Keep track of total time spent with your project open in the editor
+- Keep track of your current session
