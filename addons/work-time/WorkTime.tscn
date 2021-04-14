@@ -1,148 +1,61 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://addons/work-time/WorkTime.gd" type="Script" id=1]
 
 [node name="WorkTime" type="Control"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 175.0
-margin/bottom = 208.0
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="box" type="VBoxContainer" parent="."]
-
-anchor/right = 1
-anchor/bottom = 1
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
 alignment = 1
 
 [node name="session" type="VBoxContainer" parent="box"]
-
-editor/display_folded = true
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 3.0
-margin/right = 178.0
-margin/bottom = 86.0
-alignment = 0
+margin_right = 178.0
+margin_bottom = 32.0
 
 [node name="Label" type="Label" parent="box/session"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 178.0
-margin/bottom = 14.0
+margin_right = 178.0
+margin_bottom = 14.0
 text = "Session Length:"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Time" type="Label" parent="box/session"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 18.0
-margin/right = 178.0
-margin/bottom = 83.0
-text = "0 days\n3 hours\n21 minutes\n57 seconds"
+margin_top = 18.0
+margin_right = 178.0
+margin_bottom = 32.0
+text = "0h, 0m, 9s"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="HSeparator" type="HSeparator" parent="box"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 90.0
-margin/right = 178.0
-margin/bottom = 93.0
+margin_top = 36.0
+margin_right = 178.0
+margin_bottom = 40.0
 
 [node name="total" type="VBoxContainer" parent="box"]
-
-editor/display_folded = true
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 97.0
-margin/right = 178.0
-margin/bottom = 204.0
-alignment = 0
+margin_top = 44.0
+margin_right = 178.0
+margin_bottom = 151.0
 
 [node name="Label" type="Label" parent="box/total"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 178.0
-margin/bottom = 14.0
+margin_right = 178.0
+margin_bottom = 14.0
 text = "Current Cost of Life:"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Time" type="Label" parent="box/total"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 18.0
-margin/right = 178.0
-margin/bottom = 83.0
-text = "0 days\n0 hours\n1 minutes\n8 seconds"
+margin_top = 18.0
+margin_right = 178.0
+margin_bottom = 83.0
+text = "0 days
+0 hours
+3 minutes
+15 seconds"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
 [node name="Reset" type="Button" parent="box/total"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 87.0
-margin/right = 178.0
-margin/bottom = 107.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
+margin_top = 87.0
+margin_right = 178.0
+margin_bottom = 107.0
 text = "Reset (hold for 3 seconds)"
-flat = false
-
-
