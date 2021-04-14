@@ -1,14 +1,16 @@
-
 extends Control
 tool
 
 
 var session_time=0 setget _set_session_time
 var time=0 setget _set_time
+var _editor_interface:EditorInterface
 
 const PATH = 'res://addons/work-time/'
 
 var reset_time = 0
+var focuse_active = true
+
 
 func _set_time(value):
 	time = value
@@ -20,18 +22,23 @@ func _set_session_time(value):
 
 func save():
 	var file = File.new()
-	var opened = file.open(PATH+'time.sav', File.WRITE)
+	var opened = file.open(PATH+'time.txt', File.WRITE)
 	if opened == OK:
-		file.store_line({'time': time}.to_json())
+		file.store_line(JSON.print({'time': time}))
 	file.close()
 
 func restore():
 	var file = File.new()
-	var opened = file.open(PATH+'time.sav', File.READ)
+	var opened = file.open(PATH+'time.txt', File.READ)
 	if opened == OK:
 		var data = {}
 		while !file.eof_reached():
-			data.parse_json(file.get_line())
+			var l = file.get_line()
+			if !l:
+				continue
+				
+			data = JSON.parse(l).result
+		
 		if data['time'] != null:
 			set('time', data['time'])
 		else:
@@ -49,7 +56,27 @@ func _enter_tree():
 func _exit_tree():
 	save()
 
+func _notification(what):
+	
+		
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
+		focuse_active = true
+	elif what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		focuse_active = false
+
+
 func _process(delta):
+	
+		
+		
+	if (OS.is_window_minimized()):
+		return
+	
+	if (!focuse_active):
+		if (_editor_interface != null and _editor_interface.get_playing_scene() == ""):
+			return
+		
+	
 	if time != null:
 		var new_time = time+delta
 		set('time',new_time)
